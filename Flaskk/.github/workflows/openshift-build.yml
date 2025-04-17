@@ -1,0 +1,22 @@
+name: Trigger OpenShift Build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  start-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install OpenShift CLI (oc)
+        run: |
+          curl -LO "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz"
+          tar -xvf openshift-client-linux.tar.gz
+          sudo mv oc /usr/local/bin/
+      - name: Login to OpenShift
+        run: |
+          oc login ${{ secrets.OCP_SERVER }} --token=${{ secrets.OCP_TOKEN }} --insecure-skip-tls-verify=true
+      - name: Trigger Build
+        run: |
+          oc start-build voting-app -n riteshkumar01-dev --wait
