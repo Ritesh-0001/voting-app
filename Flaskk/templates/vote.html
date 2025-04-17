@@ -17,7 +17,7 @@
 </html>
  -->
 
- <!DOCTYPE html>
+<!--  <!DOCTYPE html>
 <html>
 <head>
     <title>Vote</title>
@@ -100,6 +100,101 @@
             <div class="team-buttons">
                 <button type="submit" name="team" value="Mountains" class="mountains-button">Mountains</button>
                 <button type="submit" name="team" value="Beaches" class="beaches-button">Beaches</button>
+            </div>
+        </form>
+        
+        <div class="links">
+            <a href="/results">See Results</a> |
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            color: #3f51b5;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .option-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .mountains-button {
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .mountains-button:hover {
+            background-color: #0d47a1;
+        }
+        .beaches-button {
+            background-color: #ff8f00;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .beaches-button:hover {
+            background-color: #ef6c00;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            color: #3f51b5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ session['username'] }}!</h2>
+        <form method="POST">
+            <p>Which do you prefer?</p>
+            <div class="option-buttons">
+                <button type="submit" name="team" value="MI" class="mountains-button">Mountains</button>
+                <button type="submit" name="team" value="SRH" class="beaches-button">Beaches</button>
             </div>
         </form>
         
