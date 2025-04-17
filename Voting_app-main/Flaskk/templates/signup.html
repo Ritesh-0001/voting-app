@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Vote</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form method="POST">
+        Username: <input type="text" name="username" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <button type="submit">Sign Up</button>
+    </form>
+    <br>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <p>Already have an account? <a href="/login">Login here</a></p>
+</body>
+</html>
