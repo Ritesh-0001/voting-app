@@ -14,7 +14,7 @@
 </html>
  -->
 
- <!DOCTYPE html>
+<!--  <!DOCTYPE html>
 <html>
 <head>
     <title>Results</title>
@@ -73,6 +73,75 @@
         <h2>Voting Results</h2>
         <div class="vote-count rcb">Mountains: {{ votes['Mountains'] }}</div>
         <div class="vote-count csk">Beaches: {{ votes['Beaches'] }}</div>
+        
+        <div class="links">
+            <a href="/vote">Back to Vote</a> |
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            color: #3f51b5;
+            margin-bottom: 25px;
+        }
+        .vote-count {
+            font-size: 18px;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mountains {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .beaches {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            color: #3f51b5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Voting Results</h2>
+        <div class="vote-count mountains">Mountains: {{ votes['MI'] }}</div>
+        <div class="vote-count beaches">Beaches: {{ votes['SRH'] }}</div>
         
         <div class="links">
             <a href="/vote">Back to Vote</a> |
